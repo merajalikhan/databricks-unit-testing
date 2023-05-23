@@ -14,7 +14,8 @@ jobs:
           echo "y
           ${{ secrets.DATABRICKS_HOST }}
           ${{ secrets.DATABRICKS_TOKEN }}
-          ${{ secrets.DATABRICKS_CLUSTER_ID }}         
+          ${{ secrets.DATABRICKS_CLUSTER_ID }}
+          ${{ secrets.DATABRICKS_WORKSPACE_ORG_ID }}         
           15001" | databricks-connect configure
       - run: pytest functions --junitxml=unit-testresults.xml
       #- name: Publish Unit Test Results
